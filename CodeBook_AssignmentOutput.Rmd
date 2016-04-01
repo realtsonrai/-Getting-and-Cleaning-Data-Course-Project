@@ -1,0 +1,126 @@
+---
+title: "Code Book for Assignment 1 Submission"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background 
+This is a Code Book describing the new variables created and outputted as part of the Getting and Cleaning Data Assignment. 
+Please see the files from the link below to explain all the orignal data (note this CodeBook explains the differences between original data sets and the outputted file created as per the assignment). 
+"https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project"
+
+## Category Variable Descriptions 
+
+### "ID"    
+"ID" identifies the  person who took part in the experiment. 30 differnt candidates took part (identified as an integer between 1:30) and "NA" relates to the test data. 
+
+In the original code, the candidate IDs were saved in a seperate file called "subject_train.txt", saved with the training data. 
+
+
+### "Activity"
+"Activity" identifes the type of activity that the candidate is undertaking. 6 different types of activities were recorded
+  1 WALKING
+  2 WALKING_UPSTAIRS
+  3 WALKING_DOWNSTAIRS
+  4 SITTING
+  5 STANDING
+  6 LAYING
+
+In the original code these activity type was saved as "y_test.txt" (there was one file for training data and one for test data). In this file the activity was identifed by an integer form 1:6, but in the output data we changed this label to the descriptions as noted above. 
+
+##  Measurement Variable Descriptions
+
+In the original data sets there were 561 different measurement varibales for both test and training data ("X_test.txt" and "X_train.txt")
+
+As per assignemnt I completed the following steps on the data sets: 
+1. Deleted a large number of measurement variables, such that the output data sets only inludes     variables that had "mean()" or "std()" in their title.  This reduced the number of measurement variables down from  561 to 79 counts.  
+2. The resulting data set measurement variabled were grouped by "ID" and "Activity", and then the mean was found for each grouping. 
+3. The resulting output saved as "SummaryOutputData.csv", returned a  data set 133 observations of 81  variables ("ID",	"Activity" and 79 measurement variables). 
+
+For further details of the exact meaning of the variables below (before the mean was applied to their grouping) please refer to the original readme files that can be found via the link above. 
+### "tBodyAcc-mean()-X"              
+### "tBodyAcc-mean()-Y"               
+### "tBodyAcc-mean()-Z"               
+### "tBodyAcc-std()-X"               
+### "tBodyAcc-std()-Y"               
+### "tBodyAcc-std()-Z"                
+### "tGravityAcc-mean()-X"           
+### "tGravityAcc-mean()-Y"            
+### "tGravityAcc-mean()-Z"            
+### "tGravityAcc-std()-X"            
+### "tGravityAcc-std()-Y"             
+### "tGravityAcc-std()-Z"             
+### "tBodyAccJerk-mean()-X"          
+### "tBodyAccJerk-mean()-Y"           
+### "tBodyAccJerk-mean()-Z"           
+### "tBodyAccJerk-std()-X"           
+### "tBodyAccJerk-std()-Y"            
+### "tBodyAccJerk-std()-Z"            
+### "tBodyGyro-mean()-X"             
+### "tBodyGyro-mean()-Y"              
+### "tBodyGyro-mean()-Z"              
+### "tBodyGyro-std()-X"              
+### "tBodyGyro-std()-Y"               
+### "tBodyGyro-std()-Z"               
+### "tBodyGyroJerk-mean()-X"         
+### "tBodyGyroJerk-mean()-Y"          
+### "tBodyGyroJerk-mean()-Z"          
+### "tBodyGyroJerk-std()-X"          
+### "tBodyGyroJerk-std()-Y"           
+### "tBodyGyroJerk-std()-Z"           
+### "tBodyAccMag-mean()"             
+### "tBodyAccMag-std()"               
+### "tGravityAccMag-mean()"           
+### "tGravityAccMag-std()"           
+### "tBodyAccJerkMag-mean()"          
+### "tBodyAccJerkMag-std()"           
+### "tBodyGyroMag-mean()"            
+### "tBodyGyroMag-std()"              
+### "tBodyGyroJerkMag-mean()"         
+### "tBodyGyroJerkMag-std()"         
+### "fBodyAcc-mean()-X"               
+### "fBodyAcc-mean()-Y"               
+### "fBodyAcc-mean()-Z"              
+### "fBodyAcc-std()-X"                
+### "fBodyAcc-std()-Y"                
+### "fBodyAcc-std()-Z"               
+### "fBodyAcc-meanFreq()-X"           
+### "fBodyAcc-meanFreq()-Y"           
+### "fBodyAcc-meanFreq()-Z"          
+### "fBodyAccJerk-mean()-X"           
+### "fBodyAccJerk-mean()-Y"           
+### "fBodyAccJerk-mean()-Z"          
+### "fBodyAccJerk-std()-X"            
+### "fBodyAccJerk-std()-Y"            
+### "fBodyAccJerk-std()-Z"           
+### "fBodyAccJerk-meanFreq()-X"       
+### "fBodyAccJerk-meanFreq()-Y"       
+### "fBodyAccJerk-meanFreq()-Z"      
+### "fBodyGyro-mean()-X"              
+### "fBodyGyro-mean()-Y"              
+### "fBodyGyro-mean()-Z"             
+### "fBodyGyro-std()-X"               
+### "fBodyGyro-std()-Y"               
+### "fBodyGyro-std()-Z"              
+### "fBodyGyro-meanFreq()-X"          
+### "fBodyGyro-meanFreq()-Y"          
+### "fBodyGyro-meanFreq()-Z"         
+### "fBodyAccMag-mean()"              
+### "fBodyAccMag-std()"               
+### "fBodyAccMag-meanFreq()"         
+### "fBodyBodyAccJerkMag-mean()"      
+### "fBodyBodyAccJerkMag-std()"       
+### "fBodyBodyAccJerkMag-meanFreq()" 
+### "fBodyBodyGyroMag-mean()"         
+### "fBodyBodyGyroMag-std()"          
+### "fBodyBodyGyroMag-meanFreq()"    
+### "fBodyBodyGyroJerkMag-mean()"     
+### "fBodyBodyGyroJerkMag-std()"      
+### "fBodyBodyGyroJerkMag-meanFreq()"
+
+
+
+
